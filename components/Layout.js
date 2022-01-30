@@ -15,14 +15,6 @@ export default function Layout({ children }) {
       <Seo title={routes[router.pathname]} />
       <NavBar />
       <div>{children}</div>
-      <style jsx global>{`
-        a {
-          text-decoration: none;
-        }
-        .active {
-          color: teal;
-        }
-      `}</style>
     </>
   );
 }
