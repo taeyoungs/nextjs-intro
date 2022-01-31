@@ -1,3 +1,12 @@
+# 25 Movie Detail
+
+## log
+
+### Route State (query parameter)
+
+React Native에서 React Navigation 라이브러리의 navigation.navigate 메서드를 사용할 때 이동하면서 가지고 갈 state 값을 설정할 수 있듯이 여기서도 동일하게 페이지를 이동하면서 값을 갖고 갈 수 있게 만들 수 있다.
+
+```javascript
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 
@@ -39,41 +48,23 @@ export default function Home({ results }) {
           </Link>
         </div>
       ))}
-      <style jsx>{`
-        .container {
-          display: grid;
-          grid-template-columns: 1fr 1fr;
-          padding: 20px;
-          gap: 20px;
-        }
-        .movie {
-          cursor: pointer;
-        }
-        .movie img {
-          max-width: 100%;
-          border-radius: 12px;
-          transition: transform 0.2s ease-in-out;
-          box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
-        }
-        .movie:hover img {
-          transform: scale(1.05) translateY(-10px);
-        }
-        .movie h4 {
-          font-size: 18px;
-          text-align: center;
-        }
-      `}</style>
     </div>
   );
 }
+```
 
-export async function getServerSideProps() {
-  const response = await fetch('http://localhost:3000/api/movies');
-  const { results } = await response.json();
+### as
 
-  return {
-    props: {
-      results,
-    },
-  };
-}
+위 코드를 살펴볼 때 as라는 속성을 사용하고 있는 것을 알 수 있는데 이는 사용자에게 보여줄 URL을 마스킹하는 기능으로 query에 담아보내는 query parameter들을 숨길 수 있다.
+
+## tips
+
+- none
+
+## issue
+
+- none
+
+## dependecy
+
+- none
